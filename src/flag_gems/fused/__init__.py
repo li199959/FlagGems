@@ -23,7 +23,9 @@ from flag_gems.fused.deepseek_v4_attention_fused_q_kv_rmsnorm import fused_q_kv_
 from flag_gems.fused.DSA.bin_topk import bucket_sort_topk
 from flag_gems.fused.FLA import (
     chunk_gated_delta_rule_fwd,
+    fused_post_conv_prep,
     fused_recurrent_gated_delta_rule_fwd,
+    fused_sigmoid_gating_delta_rule_update,
 )
 from flag_gems.fused.flash_mla import flash_mla
 from flag_gems.fused.flash_mla_with_kvcache import flash_mla_with_kvcache
@@ -118,8 +120,10 @@ __all__ = [
     "fused_experts_impl",
     "fused_indexer_q_rope_quant",
     "fused_inv_rope_fp8_quant",
+    "fused_post_conv_prep",
     "fused_q_kv_rmsnorm",
     "fused_recurrent_gated_delta_rule_fwd",
+    "fused_sigmoid_gating_delta_rule_update",
     "geglu",
     "gelu_and_mul",
     "grouped_topk",

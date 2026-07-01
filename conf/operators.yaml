@@ -3142,6 +3142,32 @@ ops:
     stages:
       - alpha: '5.0'
       - beta: '5.3'
+  - id: fused_post_conv_prep
+    description: |
+      Fused post-conv1d preparation for GDN prefill used in Flash Linear Attention (FLA).
+    for:
+      - fused_post_conv_prep
+    labels:
+      - fused
+      - FLA
+    kind:
+      - Attention
+    stages:
+      - alpha: '5.0'
+      - beta: '5.3'
+  - id: fused_sigmoid_gating_delta_rule_update
+    description: |
+      Fused sigmoid gating and recurrent delta-rule update used by GDN decode.
+    for:
+      - fused_sigmoid_gating_delta_rule_update
+    labels:
+      - fused
+      - FLA
+    kind:
+      - Attention
+    stages:
+      - alpha: '5.0'
+      - beta: '5.3'
   - id: gather
     description: Gathers values along an axis specified by `dim`.
     for:
